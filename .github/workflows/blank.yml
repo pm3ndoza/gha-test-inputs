@@ -27,6 +27,13 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  print-tag:
+    runs-on: ubuntu-latest
+    if:  ${{ github.event.inputs.print_tags == 'true' }} 
+    steps:
+      - name: Print the input tag to STDOUT
+        run: echo  The tag is ${{ github.event.inputs.tag }} 
+  
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
