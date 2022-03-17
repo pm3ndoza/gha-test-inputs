@@ -21,8 +21,12 @@ on:
         options:
         - info
         - warning
-        - debug 
-      tags:
+        - debug
+      print_tags:
+        description: 'True to print to STDOUT'
+        required: true 
+        type: boolean 
+      tag:
         description: 'Test Scenario tags'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
